@@ -1,0 +1,26 @@
+<h1 class="text-center mt-4"> Listing All Containers </h1>
+<div class="container">
+  <div class="row justify-content-md-center">
+      <table class="table caption-top ">
+        <caption>List of Containers</caption>
+        <thead class="table-dark">
+          <th>Name</th>
+          <th>Image</th>
+          <th>State</th>
+          <th colspan="3"></th>
+         </thead>
+        <tbody>
+          <% @containers.each do |container| %>
+            <tr>
+              <td><%= container["Name"] %></td>
+              <td><%= container["Image"] %></td>
+              <td><%= container["State"] %></td>
+              <td><%= link_to 'Start', "/container/start/#{container['Id']}", class: "btn btn-outline-success" %></td>
+              <td><%= link_to 'Stop', "/container/stop/#{container['Id']}",  class: "btn btn-outline-secondary"  %></td>
+              <td><%= link_to 'Delete', container_path(container["Name"]), method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-outline-danger" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+</div>

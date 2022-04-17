@@ -1,0 +1,33 @@
+<h1 class="text-center mt-4"> New Container </h1>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-10">
+            <%= form_with(url: "/container", method: "post", class: "shadow p-3 mb-3 bg-dark rounded", local: true) do |f| %>
+                <div class="input-group row mb-3">
+                    <%= f.label :Name, class: "col-2 col-form-label text-white"%>
+                    <div class="col-10">
+                        <%= f.text_field :repo, class: "form-control shadow rounded", placeholder: "Name of container" %>
+                    </div>
+                </div>
+
+                <div class="input-group row mb-3">
+                    <%= f.label :Image, class: "col-2 col-form-label text-white"%>
+                    <div class="col-10">
+                         <%= f.select :image, options_for_select(@images, @images.first), {}, {class: "form-control shadow rounded"} %>
+                    </div>
+                </div>
+
+                <div class="input-group row mb-3">
+                    <%= f.label :Configurations, class: "col-2 col-form-label text-white"%>
+                    <div class="col-10">
+                        <%= f.text_area :host_config, class: "form-control shadow rounded", placeholder: "{PortBindings: {“80/tcp”: [ {HostIp: “0.0.0.0”, HostPort: “80”} ]}}" %>
+                    </div>
+                </div>
+
+                <div class="input-group justify-content-center">
+                    <%= f.submit "Create", class: "btn btn-outline-success btn-lg" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

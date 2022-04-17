@@ -8,10 +8,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <%= link_to "Images", image_index_path, class: "nav-link active" %>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Docker</a>
+                        <%= link_to "Pull image", new_image_path, class: "nav-link active" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Containers", container_index_path, class: "nav-link active" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "New Container", new_container_path, class: "nav-link active" %>
                     </li>
                 </ul>
         </div>
