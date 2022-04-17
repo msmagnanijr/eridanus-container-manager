@@ -1,0 +1,17 @@
+<h1 class="text-center mt-4"> Informações sobre Containers Docker </h1>
+<div class="row justify-content-md-center">
+    <div class="col-8 mt-4 bg-secondary">
+        <div class="card text-center mt-4 shadow mb-5 bg-white rounded">
+            <div class="card-header text-center">Número de Containers em Execução</div>
+                <div class="card-body">
+                <p class="card-text text-center"><%= @containers %></p>
+            </div>
+        </div>
+        <div class="card text-center shadow mb-5 bg-white rounded">
+            <div class="card-header text-center">Número de Containers com status 'Exited'</div>
+                <div class="card-body">
+                <p class="card-text text-center"><%= @containers_exited %></p>
+            </div>
+        </div>
+    </div>
+</div>
