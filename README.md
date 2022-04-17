@@ -1,24 +1,13 @@
-# README
+# Eridanus Container Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Eridanus Container Manage is a web application developed to exercise new features present in Ruby on Rails 6.
 
-Things you may want to cover:
+## Application Images
 
-* Ruby version
+![](app-images/list_images.png)
 
-* System dependencies
+![](app-images/pull_image.png)
 
-* Configuration
+![](app-images/list_containers.png)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](app-images/create_container.png)
