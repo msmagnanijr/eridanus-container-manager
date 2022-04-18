@@ -36,6 +36,10 @@ class ContainerController < ApplicationController
     redirect_to container_index_path
   end
 
+  def chart
+    @containers = @container.list(all: true).json
+  end
+
   private
     def set_container
       @container = Docker::API::Container.new
