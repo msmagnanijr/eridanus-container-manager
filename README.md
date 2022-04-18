@@ -2,6 +2,10 @@
 
 Eridanus Container Manage is a web application developed to exercise new features present in Ruby on Rails 6.
 
+## Search Images
+
+![](app-images/search_image.png)
+
 ## List Images
 
 ![](app-images/list_images.png)

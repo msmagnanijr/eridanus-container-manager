@@ -1,0 +1,44 @@
+<h1 class="text-center mt-4"> Search for Images </h1>
+<div class="container">
+  <div class="row justify-content-md-center">
+
+    <div class="col-10">
+            <%= form_with(url: image_search_path, method: "get", class: "shadow p-3 mb-3 bg-dark rounded", local: true) do |f| %>
+                <div class="input-group row mb-3">
+                    <%= f.label :Name, class: "col-2 col-form-label text-white"%>
+                    <div class="col-10">
+                        <%= f.text_field :search, class: "form-control shadow rounded", placeholder: "Name of the image" %>
+                    </div>
+                </div>
+
+                <div class="input-group justify-content-center">
+                    <%= f.submit "Search", class: "btn btn-outline-success btn-lg" %>
+                </div>
+            <% end %>
+        </div>
+
+    <% if @images.any? %>
+
+        <table class="table caption-top ">
+          <caption>List of Images Found</caption>
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Stars</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @images.each do |image| %>
+              <tr>
+                <td><%= image["name"] %></td>
+                <td><%= image["description"] %></td>
+                <td><%= image["star_count"] %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+    <% end %>
+  </div>
+</div>

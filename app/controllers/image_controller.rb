@@ -21,14 +21,18 @@ class ImageController < ApplicationController
     redirect_to image_index_path
   end
 
+  def search
+    @image = @image.search('term' => image_params[:search])
+    @images = @image.json
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_image
       @image = Docker::API::Image.new
     end
 
-    # Only allow a list of trusted parameters through.
     def image_params
-      params.permit(:repo, :tag)
+      params.permit(:repo, :tag, :search)
     end
 end
